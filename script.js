@@ -43,7 +43,11 @@ complaintForm.addEventListener("submit", function (e) {
     room,
     type,
     desc,
-    date: new Date().toLocaleString(),
+    date: new Date().toLocaleString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }),
   };
 
   complaints.push(complaint);
@@ -60,5 +64,62 @@ function displayComplaints() {
     const li = document.createElement("li");
     li.textContent = `${c.name} (Room ${c.room}) - ${c.type}: ${c.desc} | ${c.date}`;
     complaintList.appendChild(li);
+  });
+}
+
+const leaveForm = document.getElementById("leaveForm");
+const leaveList = document.getElementById("leaveList");
+let leaves = JSON.parse(localStorage.getItem("leaves")) || [];
+displayLeaves();
+
+leaveForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const name = document.getElementById("lName").value;
+  const room = document.getElementById("lRoom").value;
+
+  const from = new Date(
+    document.getElementById("lFrom").value,
+  ).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  const to = new Date(document.getElementById("lTo").value).toLocaleDateString(
+    "en-GB",
+    { day: "2-digit", month: "2-digit", year: "numeric" },
+  );
+
+  const reason = document.getElementById("lReason").value;
+
+  const leave = {
+    name: name,
+    room: room,
+    from: from,
+    to: to,
+    reason: reason,
+    date: new Date().toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }),
+  };
+
+  leaves.push(leave);
+  localStorage.setItem("leaves", JSON.stringify(leaves));
+  displayLeaves();
+  leaveForm.reset();
+
+  return false;
+});
+
+function displayLeaves() {
+  leaveList.innerHTML = "";
+  leaves.forEach((l) => {
+    const li = document.createElement("li");
+    li.textContent = `${l.name} (Room ${l.room}) | ${l.from} → ${l.to} | Reason: ${l.reason} | ${l.date}`;
+    leaveList.appendChild(li);
   });
 }

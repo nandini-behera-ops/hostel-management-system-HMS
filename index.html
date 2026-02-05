@@ -45,17 +45,17 @@
   <!-- Leave Section -->
   <div class="section" id="leaveSection">
     <h2>Leave Request</h2>
-    <form action="">
-      <input type="text" placeholder="Your Name" required />
-      <input type="text" placeholder="Room Number" required />
-      From:<input type="date" required />
-      To:<input type="date" required />
-      <textarea placeholder="Reason for leave" required></textarea>
+    <form id="leaveForm">
+      <input type="text" id="lName" placeholder="Your Name" required />
+      <input type="text" id="lRoom" placeholder="Room Number" required />
+      From:<input id="lFrom" type="date" required />
+      To:<input id="lTo" type="date" required />
+      <textarea id="lReason" placeholder="Reason for leave" required></textarea>
       <button type="submit">Submit Leave Request</button>
     </form>
 
     <h3>📋 Leave Requests</h3>
-    <ul></ul>
+    <ul id="leaveList"></ul>
   </div>
 
   <!-- Mess Section -->
