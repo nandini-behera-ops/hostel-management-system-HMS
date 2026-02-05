@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="title">🏠 Hostel Management System</h1>
+
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <button id="complaint">📝 Register Complaint</button>
+    <button>📄 Request Leave</button>
+    <button>🍽️ Mess Menu</button>
+    <button>📢 Notices</button>
+  </div>
+
+
+  <!-- Complaint Section -->
+  <div class="section" id="complaintSection">
+    <h2>Register a Complaint</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Room Number" required />
+      <select required>
+        <option>Select Problem Type</option>
+        <option>Water</option>
+        <option>Electricity</option>
+        <option>Cleanliness</option>
+        <option>Furniture</option>
+        <option>Other</option>
+      </select>
+      <textarea placeholder="Describe the problem" required></textarea>
+      <button type="submit">Submit Complaint</button>
+    </form>
+
+    <h3>📋 Submitted Complaints</h3>
+    <ul></ul>
+  </div>
+
+  <!-- Leave Section -->
+  <div class="section" id="leaveSection">
+    <h2>Leave Request</h2>
+    <form action="">
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Room Number" required />
+      From:<input type="date" required />
+      To:<input type="date" required />
+      <textarea placeholder="Reason for leave" required></textarea>
+      <button type="submit">Submit Leave Request</button>
+    </form>
+
+    <h3>📋 Leave Requests</h3>
+    <ul></ul>
+  </div>
+
+  <!-- Mess Section -->
+  <div class="section" id="messSection">
+    <h2>Mess Menu</h2>
+    <table border="1">
+      <tr>
+        <th>Day</th>
+        <th>Breakfast</th>
+        <th>Lunch</th>
+        <th>Dinner</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>Idli</td>
+        <td>Rice , Dal & Curry</td>
+        <td>Pulao & Rice , Dal , Curry</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Badha</td>
+        <td>Rice , Dal & Fries</td>
+        <td>Rice ,Dal & Egg/Panner</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Puri</td>
+        <td>Rice , Dal & Chicken/Panner </td>
+        <td>Rice , Dal , Curry</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Idli</td>
+        <td>Rice , Dal & Curry</td>
+        <td> Rice , Dal , Curry</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Puri</td>
+        <td>Rice , Dal & Chicken/Panner </td>
+        <td>Rice , Dal , Curry</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>Badha</td>
+        <td>Rice , Dal & Fries</td>
+        <td>Rice ,Dal ,Fries & Kheer</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>Chowmin</td>
+        <td>Rice,Dall,Chicken/Fish</td>
+        <td>Rice , Dal , Curry</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <!-- Notice Section -->
+  <div class="section" id="noticeSection">
+    <h2>Notices</h2>
+    <form action="">
+      <textarea placeholder="Write a notice..." required></textarea>
+      <button type="submit">Add Notice</button>
+    </form>
+
+    <h3>📢 All Notices</h3>
+    <ul></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
