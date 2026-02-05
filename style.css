@@ -76,6 +76,19 @@ body {
 .section button:hover {
   background: #2e7d32;
 }
+
+.section ul {
+  margin-top: 15px;
+  list-style: none;
+}
+
+.section ul li {
+  background: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
 table {
   width: 100%;
   border-collapse: collapse;

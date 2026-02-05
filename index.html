@@ -23,10 +23,10 @@
   <!-- Complaint Section -->
   <div class="section" id="complaintSection">
     <h2>Register a Complaint</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="text" placeholder="Room Number" required />
-      <select required>
+    <form id="complaintForm">
+      <input type="text" placeholder="Your Name" id="cName" required />
+      <input type="text" placeholder="Room Number" id="cRoom" required />
+      <select required id="cType">
         <option>Select Problem Type</option>
         <option>Water</option>
         <option>Electricity</option>
@@ -34,12 +34,12 @@
         <option>Furniture</option>
         <option>Other</option>
       </select>
-      <textarea placeholder="Describe the problem" required></textarea>
+      <textarea id="cDesc" placeholder="Describe the problem" required></textarea>
       <button type="submit">Submit Complaint</button>
     </form>
 
     <h3>📋 Submitted Complaints</h3>
-    <ul></ul>
+    <ul id="complaintList"></ul>
   </div>
 
   <!-- Leave Section -->
