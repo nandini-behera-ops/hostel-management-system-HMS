@@ -123,3 +123,41 @@ function displayLeaves() {
     leaveList.appendChild(li);
   });
 }
+
+const noticeForm = document.getElementById("noticeForm");
+const noticeList = document.getElementById("noticeList");
+
+let notices = JSON.parse(localStorage.getItem("notices")) || [];
+displayNotices();
+
+noticeForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const text = document.getElementById("noticeText").value;
+
+  const notice = {
+    text,
+    date: new Date().toLocaleString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }),
+  };
+
+  notices.push(notice);
+  localStorage.setItem("notices", JSON.stringify(notices));
+  displayNotices();
+  noticeForm.reset();
+
+  return false;
+});
+
+function displayNotices() {
+  noticeList.innerHTML = "";
+  notices.forEach((n) => {
+    const li = document.createElement("li");
+    li.textContent = `${n.text} | ${n.date}`;
+    noticeList.appendChild(li);
+  });
+}
